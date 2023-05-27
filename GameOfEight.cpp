@@ -91,7 +91,7 @@ void PlayGame() {
 			cout << "Please enter different the prvious number ( " << previousChosenNumber << " )" << endl;				
 		}
 		
-		if (chosenNumber < 1 || chosenNumber > 3) {
+		if (chosenNumber < LOWER_BOUND || chosenNumber > UPPER_BOUND) {
 			cout << "Please enter the number from 1 to 3!" << endl;
 		} else {
 			if (previousChosenNumber != chosenNumber)  {
