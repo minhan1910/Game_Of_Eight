@@ -1,0 +1,28 @@
+# Project: GameOfEight
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe -std=c99
+WINDRES  = windres.exe
+OBJ      = GameOfEight.o
+LINKOBJ  = GameOfEight.o
+LIBS     = -L"E:/Dev-cpp/MinGW64/lib" -L"E:/Dev-cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"E:/Dev-cpp/MinGW64/include" -I"E:/Dev-cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/Dev-cpp/MinGW64/include" -I"E:/Dev-cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Dev-cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = GameOfEight.exe
+CXXFLAGS = $(CXXINCS) -ansi -std=c++11
+CFLAGS   = $(INCS) -ansi -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+GameOfEight.o: GameOfEight.cpp
+	$(CPP) -c GameOfEight.cpp -o GameOfEight.o $(CXXFLAGS)
